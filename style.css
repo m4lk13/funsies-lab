@@ -112,6 +112,30 @@ select {
   min-width: 160px;
 }
 
+.slot {
+  justify-content: space-between;
+}
+
+.slot-display {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 2px solid #2d375b;
+  border-radius: 8px;
+  background: #0f142b;
+  min-width: 190px;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #f7d66a;
+}
+
+.slot-display span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+}
+
 #game {
   width: 100%;
   height: auto;

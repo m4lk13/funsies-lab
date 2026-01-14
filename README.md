@@ -23,3 +23,5 @@ Then open `http://localhost:8000` in your browser.
 - **Tap / Click / Space** to hop.
 - **R** to reset.
 - Choose **Difficulty** (Chill, Classic, Cosmic) for different pipe gaps and speed.
+- Toggle **Music** to play a chiptune take on *In the Hall of the Mountain King*.
+- After a crash, **Spin** the slot machine once to earn a mutator for the next run.
