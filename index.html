@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moon Hopper</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hud">
+        <div class="title">Moon Hopper</div>
+        <div class="score">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="best">
+          <span>Best</span>
+          <strong id="best">0</strong>
+        </div>
+      </header>
+      <section class="panel">
+        <div class="panel-row">
+          <button id="start" class="primary" type="button">Start</button>
+          <button id="reset" type="button">Reset</button>
+          <button id="music" type="button">Music: Off</button>
+        </div>
+        <div class="panel-row">
+          <label class="field">
+            <span>Difficulty</span>
+            <select id="difficulty">
+              <option value="chill">Chill</option>
+              <option value="classic" selected>Classic</option>
+              <option value="cosmic">Cosmic</option>
+            </select>
+          </label>
+          <div class="field">
+            <span>Last</span>
+            <strong id="last">0</strong>
+          </div>
+          <div class="field">
+            <span>Mutator</span>
+            <strong id="mutator">None</strong>
+          </div>
+        </div>
+        <div class="panel-row slot">
+          <div class="slot-display" aria-label="Slot machine">
+            <span id="slot-1">★</span>
+            <span id="slot-2">★</span>
+            <span id="slot-3">★</span>
+          </div>
+          <button id="spin" type="button" disabled>Spin (Game Over)</button>
+        </div>
+      </section>
+      <canvas id="game" width="480" height="640" aria-label="Moon flappy game"></canvas>
+      <div class="controls">
+        <p><strong>Tap / Click / Space</strong> to hop.</p>
+        <p>Press <strong>R</strong> to reset.</p>
+      </div>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
