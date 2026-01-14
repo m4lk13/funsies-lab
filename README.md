@@ -7,6 +7,12 @@ A flappy-inspired mini game featuring a pixel-art moon dodging cosmic pipes.
 You can launch the game in any modern browser.
 
 ```bash
+./launch.sh
+```
+
+Or run directly:
+
+```bash
 python3 -m http.server 8000
 ```
 
