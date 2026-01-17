@@ -23,10 +23,18 @@ const difficultySettings = {
 };
 
 const mutators = [
-  { id: "low-gravity", label: "Low Gravity", emoji: "🌙" },
-  { id: "explosions", label: "Explosions", emoji: "💥" },
-  { id: "reversed", label: "Reversed Controls", emoji: "🔁" },
+  { id: "low-gravity", label: "Low Gravity", icon: "moon" },
+  { id: "explosions", label: "Explosions", icon: "supernova" },
+  { id: "reversed", label: "Reversed Controls", icon: "rocket" },
 ];
+
+const defaultSlots = ["moon", "star", "rocket"];
+const slotIconLabels = {
+  moon: "Low Gravity",
+  star: "Cosmic Star",
+  rocket: "Reversed Controls",
+  supernova: "Explosions",
+};
 
 const state = {
   frame: 0,
@@ -159,6 +167,11 @@ function resetGame() {
   spinButton.disabled = true;
   spinButton.textContent = "Spin (Game Over)";
   state.spinReady = false;
+  slotEls.forEach((slot, index) => {
+    const icon = defaultSlots[index] || "star";
+    slot.dataset.icon = icon;
+    slot.setAttribute("aria-label", slotIconLabels[icon] || "Cosmic Icon");
+  });
   updateScore();
 }
 
@@ -459,11 +472,12 @@ function update() {
     startButton.textContent = "Retry";
     state.spinReady = true;
     spinButton.disabled = false;
-    spinButton.textContent = "Spin";
+    spinButton.textContent = "Spin Again";
     if (state.activeMutator?.id === "explosions") {
       spawnExplosion(moon.x, moon.y);
     }
     state.activeMutator = null;
+    spinSlots({ auto: true });
     updateScore();
   }
 }
@@ -486,25 +500,26 @@ function loop() {
   requestAnimationFrame(loop);
 }
 
-function spinSlots() {
+function spinSlots({ auto = false } = {}) {
   if (!state.spinReady) {
     return;
   }
-  state.spinReady = false;
-  spinButton.disabled = true;
-  spinButton.textContent = "Spun";
 
   const result = [];
   for (let i = 0; i < 3; i += 1) {
     result.push(mutators[Math.floor(Math.random() * mutators.length)]);
   }
   slotEls.forEach((slot, index) => {
-    slot.textContent = result[index].emoji;
+    slot.dataset.icon = result[index].icon;
+    slot.setAttribute("aria-label", result[index].label);
   });
 
   const winning = result[Math.floor(Math.random() * result.length)];
   state.pendingMutator = winning;
   message.subtitle = `Next run: ${winning.label}`;
+  if (!auto) {
+    spinButton.textContent = "Spin Again";
+  }
 }
 
 function playNote(frequency, duration) {

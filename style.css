@@ -125,8 +125,6 @@ select {
   background: #0f142b;
   min-width: 190px;
   justify-content: center;
-  font-size: 1.1rem;
-  color: #f7d66a;
 }
 
 .slot-display span {
@@ -134,6 +132,33 @@ select {
   align-items: center;
   justify-content: center;
   width: 32px;
+}
+
+.slot-icon {
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  border-radius: 6px;
+  background-color: rgba(19, 26, 51, 0.65);
+}
+
+.slot-icon[data-icon="moon"] {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'><rect width='16' height='16' fill='none'/><rect x='3' y='3' width='10' height='10' fill='%23f6f0e0'/><rect x='5' y='5' width='2' height='2' fill='%23d7cbb8'/><rect x='9' y='8' width='2' height='2' fill='%23d7cbb8'/><rect x='7' y='10' width='3' height='2' fill='%23d7cbb8'/></svg>");
+}
+
+.slot-icon[data-icon="star"] {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'><rect width='16' height='16' fill='none'/><rect x='7' y='2' width='2' height='12' fill='%23f7d66a'/><rect x='2' y='7' width='12' height='2' fill='%23f7d66a'/><rect x='5' y='5' width='6' height='6' fill='%23f4b340'/></svg>");
+}
+
+.slot-icon[data-icon="rocket"] {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'><rect width='16' height='16' fill='none'/><rect x='7' y='2' width='2' height='8' fill='%23d5d7ff'/><rect x='6' y='4' width='4' height='4' fill='%2398a6ff'/><rect x='6' y='10' width='4' height='2' fill='%23f7d66a'/><rect x='5' y='12' width='6' height='2' fill='%23ff8c42'/><rect x='7' y='1' width='2' height='1' fill='%23f25c5c'/></svg>");
+}
+
+.slot-icon[data-icon="supernova"] {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'><rect width='16' height='16' fill='none'/><rect x='7' y='2' width='2' height='12' fill='%23f25c5c'/><rect x='2' y='7' width='12' height='2' fill='%23f25c5c'/><rect x='5' y='5' width='6' height='6' fill='%23ff8c42'/><rect x='6' y='6' width='4' height='4' fill='%23f7d66a'/></svg>");
 }
 
 #game {
