@@ -6,6 +6,8 @@ Screenshot placeholder: `docs/screenshot-placeholder.txt`
 
 ## Local Development
 
+Node.js 16.8+ is required.
+
 ```bash
 npm install
 npm run dev
