@@ -1,0 +1,4 @@
+Screenshot placeholder.
+
+Capture a screenshot after running the app locally and replace this file
+with an image asset if your tooling supports binary uploads.
